@@ -3,13 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <View style={styles.container}>
       <Text style={styles.titleText}>Mobile Apps</Text>
       <Text style={styles.bodyText}>Sathvik Loka</Text>
     </View>
@@ -24,5 +18,16 @@ const styles = StyleSheet.create({
     color: "#00F0FF",
     fontWeight: "bold",
   },
-  bodyText: {},
+  bodyText: {
+    color: "white",
+    fontSize: 18,
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
+    borderColor: "purple",
+    borderWidth: 20,
+  },
 });
