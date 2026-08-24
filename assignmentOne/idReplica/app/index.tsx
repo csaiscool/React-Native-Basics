@@ -11,18 +11,18 @@ export default function Index() {
         <Text style={styles.basicInfo}>Township High School D211</Text>
         <Text style={styles.basicInfo}>Grade 11</Text>
       </View>
-
+      <View style={{ height: 10 }}></View>
       <View style={styles.leftContentColumn}>
         <View style={styles.nameBlock}>
           <Text style={styles.boldedInfo}>Kadiyala,</Text>
           <Text style={styles.boldedInfo}>Siddharth</Text>
         </View>
-
+        <View style={{ height: 25 }}></View>
         <View style={styles.classInfoBlock}>
           <Text style={styles.mediumInfo}>02 Clement, N</Text>
           <Text style={styles.mediumInfo}>C- Tosh, T</Text>
         </View>
-
+        <View style={{ height: 50 }}></View>
         <View style={styles.busRow}>
           <View style={styles.greenBox}>
             <Text style={styles.greenBoxText}>26-27</Text>
@@ -35,10 +35,20 @@ export default function Index() {
       </View>
 
       <View style={styles.idCircle}>
-        <Image source={sidPic}></Image>
+        <Image source={sidPic} style={styles.image}></Image>
       </View>
 
       <View style={styles.qrCodeBox}>
+        <View style={styles.qrCodeRectangleT1}></View>
+        <View style={styles.qrCodeRectangleT2}></View>
+        <View style={styles.qrCodeRectangleT1}></View>
+        <View style={styles.qrCodeRectangleT2}></View>
+        <View style={styles.qrCodeRectangleT1}></View>
+        <View style={styles.qrCodeRectangleT2}></View>
+        <View style={styles.qrCodeRectangleT1}></View>
+        <View style={styles.qrCodeRectangleT2}></View>
+        <View style={styles.qrCodeRectangleT1}></View>
+        <View style={styles.qrCodeRectangleT2}></View>
         <View style={styles.qrCodeRectangleT1}></View>
         <View style={styles.qrCodeRectangleT2}></View>
         <View style={styles.qrCodeRectangleT1}></View>
@@ -49,7 +59,7 @@ export default function Index() {
     </View>
   );
 }
-const sidPic = require("../assets/images/sidpic.jpg");
+const sidPic = require("../assets/images/sidpic.jpg"); //paths to sidpic.jpg and sets sidPic constant to the image
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#7f7f7f",
@@ -135,23 +145,26 @@ const styles = StyleSheet.create({
     position: "absolute", //same thing as qrCodeBox
     right: 30,
     bottom: 60,
-    width: 260,
-    height: 260,
-    borderRadius: 130,
+    width: 500,
+    height: 500,
+    borderRadius: 250,
     overflow: "hidden", //forces image inside to stay inside the container
     backgroundColor: "green",
+    justifyContent: "center",
+    alignItems: "center",
   },
   qrCodeBox: {
     position: "absolute", // it was getting cut off earlier; this forces it to stay on page
     left: 20,
     bottom: 20,
     backgroundColor: "white",
-    width: 320,
-    height: 100,
+    width: 640,
+    height: 200,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
     paddingHorizontal: 10,
+    borderWidth: 10,
   },
   qrCodeRectangleT1: {
     height: 80,
@@ -162,5 +175,10 @@ const styles = StyleSheet.create({
     height: 80,
     width: 32,
     backgroundColor: "black",
+  },
+  image: {
+    resizeMode: "center", //forces the image to be centered
+    width: "135%",
+    height: "135%",
   },
 });
