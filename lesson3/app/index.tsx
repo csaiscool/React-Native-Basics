@@ -1,6 +1,8 @@
+import MyButton from "@/components/MyButton";
 import {
   Alert,
   Button,
+  Image,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -15,7 +17,6 @@ export default function Index() {
       { text: "No", onPress: () => console.log("Pressed no") },
     ]);
   };
-
   return (
     <View
       style={{
@@ -24,9 +25,29 @@ export default function Index() {
         alignItems: "center",
       }}
     >
+      <MyButton />
+      <MyButton />
+      <MyButton />
+      <MyButton />
       <View>
         <Button title="Alert Button" onPress={myAlertFn} />
       </View>
+      <Image
+        style={styles.image}
+        source={require("../assets/images/fantasy/puka.png")}
+      />
+      <Image
+        style={styles.image}
+        source={require("../assets/images/fantasy/hurts.png")}
+      />
+      <Image
+        style={styles.image}
+        source={require("../assets/images/fantasy/saquon.png")}
+      />
+      <Image
+        style={styles.image}
+        source={{ uri: "https://picsum.photos/200/300" }}
+      />
 
       <TouchableHighlight
         onPress={() => alert("button pressed")}
@@ -72,5 +93,19 @@ const styles = StyleSheet.create({
     borderWidth: 5,
     justifyContent: "center",
     alignItems: "center",
+  },
+  image: {
+    height: 100,
+    width: 100,
+    borderWidth: 5,
+    borderColor: "#87CEEB",
+    borderRadius: 35,
+  },
+  image2: {
+    height: 200,
+    width: 200,
+    borderWidth: 10,
+    borderColor: "#87CEEB",
+    borderRadius: 100,
   },
 });
