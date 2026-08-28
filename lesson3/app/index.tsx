@@ -25,10 +25,10 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <MyButton />
-      <MyButton />
-      <MyButton />
-      <MyButton />
+      <MyButton text="hi" onPress={() => alert("hi")} />
+      <MyButton text="bye" onPress={() => alert("bye")} />
+      <MyButton text="hello" onPress={() => alert("hello")} />
+      <MyButton text="boo" onPress={() => alert("boo")} />
       <View>
         <Button title="Alert Button" onPress={myAlertFn} />
       </View>

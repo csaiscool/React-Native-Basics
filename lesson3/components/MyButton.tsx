@@ -2,18 +2,41 @@
 import React from "react";
 import { StyleSheet, Text, TouchableHighlight } from "react-native";
 
-const MyButton = () => {
-  const onPressFunction = () => {
-    alert("You called a function!");
-  };
+// declare datatype for the props we will send in for this component
+// this datatype really only applies to this component
+// if datatype would be used in other places, define and import separately
 
+// the name is generic because only declaring type of props used here
+type propsType = {
+  text: string; //required prop
+  color?: string; // ? means optional
+  backgroundColor?: string;
+  fontSize?: number;
+  onPress: () => void;
+};
+
+// declare myButton uses type propsType to send needed info
+// destructure props to make using prop values easier
+// curly braces go in parentheses for this
+const MyButton: React.FC<propsType> = ({
+  text,
+  color = "purple",
+  backgroundColor = "lavender",
+  fontSize = 15,
+  onPress,
+}) => {
   return (
     <TouchableHighlight
-      style={styles.button}
-      onPress={() => onPressFunction}
-      underlayColor={"red"}
+      style={[
+        styles.button,
+        { backgroundColor: backgroundColor, borderColor: color },
+      ]}
+      onPress={onPress}
+      underlayColor={"salmon"}
     >
-      <Text>MyButton</Text>
+      <Text style={[styles.buttonText, { color: color, fontSize: fontSize }]}>
+        {text}
+      </Text>
     </TouchableHighlight>
   );
 };
@@ -28,8 +51,6 @@ const styles = StyleSheet.create({
   button: {
     width: 100,
     height: 50,
-    backgroundColor: "white",
-    borderColor: "black",
     borderWidth: 5,
     justifyContent: "center",
     alignItems: "center",
