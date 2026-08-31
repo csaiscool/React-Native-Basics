@@ -13,6 +13,7 @@ type propsType = {
   backgroundColor?: string;
   fontSize?: number;
   onPress: () => void;
+  underlayColor?: string;
 };
 
 // declare myButton uses type propsType to send needed info
@@ -24,6 +25,7 @@ const MyButton: React.FC<propsType> = ({
   backgroundColor = "lavender",
   fontSize = 15,
   onPress,
+  underlayColor = "salmon",
 }) => {
   return (
     <TouchableHighlight
@@ -32,7 +34,7 @@ const MyButton: React.FC<propsType> = ({
         { backgroundColor: backgroundColor, borderColor: color },
       ]}
       onPress={onPress}
-      underlayColor={"salmon"}
+      underlayColor={underlayColor}
     >
       <Text style={[styles.buttonText, { color: color, fontSize: fontSize }]}>
         {text}

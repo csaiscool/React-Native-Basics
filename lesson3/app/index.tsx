@@ -25,7 +25,13 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <MyButton text="hi" onPress={() => alert("hi")} />
+      <MyButton
+        text="hi"
+        color="black"
+        backgroundColor="white"
+        fontSize={24}
+        onPress={() => alert("hi")}
+      />
       <MyButton text="bye" onPress={() => alert("bye")} />
       <MyButton text="hello" onPress={() => alert("hello")} />
       <MyButton text="boo" onPress={() => alert("boo")} />
